@@ -1,5 +1,12 @@
 $(document).ready(function () {
 
+    var targetScore = $("#target-score");
+    var playerScore = $("#player-score");
+    var wins = $("#wins");
+    var losses = $("#losses");
+
+    var currentScore = 0;
+
     var targetValue;
 
     function getTarget() {
@@ -37,6 +44,12 @@ $(document).ready(function () {
         crystal3 = crystalValues[2],
         crystal4 = crystalValues[3];
 
+
+
+
+    $("#crystal-1").on(click, function () {
+        currentScore = currentScore + crystal1;
+    })
 
 
     console.log(targetValue);
