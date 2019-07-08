@@ -1,10 +1,20 @@
 $(document).ready(function () {
 
-    // function resetState() {
-    //     newTarget();
-    //     getCrystalValues();
-    //     currentScore = 0;
-    // }
+    function resetState() {
+        crystalValues = [];
+        newTarget();
+        getCrystalValues();
+        crystal1 = crystalValues[0];
+        crystal2 = crystalValues[1];
+        crystal3 = crystalValues[2];
+        crystal4 = crystalValues[3];
+        currentScore = 0;
+        winText.text(wins);
+        lossText.text(losses);
+        targetScore.text(targetValue);
+        playerScore.text(currentScore);
+
+    }
 
     var targetScore = $("#target-score");
     var playerScore = $("#player-score");
@@ -17,20 +27,6 @@ $(document).ready(function () {
     winText.text(wins);
     lossText.text(losses);
 
-    function resetState() {
-        crystalValues = [];
-        newTarget();
-        getCrystalValues();
-        console.log(crystalValues);
-        crystal1 = crystalValues[0];
-        crystal2 = crystalValues[1];
-        crystal3 = crystalValues[2];
-        crystal4 = crystalValues[3];
-        currentScore = 0;
-        winText.text(wins);
-        lossText.text(losses);
-
-    }
 
 
     function getTarget() {
@@ -45,12 +41,9 @@ $(document).ready(function () {
 
     targetScore.text(targetValue);
 
-    // playerScore.text(currentScore);
-
     var crystalValues = [];
 
     function getCrystalValues() {
-
 
         var x = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12];
 
@@ -68,7 +61,6 @@ $(document).ready(function () {
     getCrystalValues();
 
 
-
     var crystal1 = crystalValues[0],
         crystal2 = crystalValues[1],
         crystal3 = crystalValues[2],
@@ -83,38 +75,7 @@ $(document).ready(function () {
 
     var currentScore = 0;
 
-
-    // $('#crystal-1').on('click', function () {
-    //     currentScore += crystal1;
-    //     console.log(currentScore);
-    //     playerScore.text(currentScore);
-    // })
-
-    // $('#crystal-2').on('click', function () {
-    //     currentScore += crystal2;
-    //     console.log(currentScore);
-    //     playerScore.text(currentScore);
-    // })
-
-    // $('#crystal-3').on('click', function () {
-    //     currentScore += crystal3;
-    //     console.log(currentScore);
-    //     playerScore.text(currentScore);
-    // })
-
-    // $('#crystal-4').on('click', function () {
-    //     currentScore += crystal4;
-    //     console.log(currentScore);
-    //     playerScore.text(currentScore);
-    // })
-
-
-
-
     $('img').on('click', function () {
-
-        // winText.text(wins);
-        // lossText.text(losses);
 
         if (currentScore !== targetValue) {
             if ($(this).attr("id") == "crystal-1") {
@@ -133,44 +94,15 @@ $(document).ready(function () {
         }
 
         if (currentScore === targetValue) {
-
-            currentScore = 0;
             wins++;
             resetState();
-            targetScore.text(targetValue);
-            playerScore.text(currentScore);
-            // winText.text(wins);
-            // lossText.text(losses);
         }
 
-        console.log(currentScore);
+        if (currentScore > targetValue) {
+            losses++;
+            resetState();
+        }
+
     })
-
-
-
-
-
-    // if (currentScore === targetScore) {
-    //     resetState();
-    //     wins++;
-    // } else if (currentScore > targetScore) {
-    //     resetState();
-    //     losses++;
-    // }
-
-    playerScore.text(currentScore);
-
-    // console.log(targetValue);
-
-    // console.log(crystalValues);
-
-
-
-    // newTarget();
-    // console.log(targetValue);
-
-
-
-
 
 })

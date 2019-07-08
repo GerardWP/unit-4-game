@@ -1,3 +1,8 @@
+body {
+    background: url(../images/crystal-cave.png) center no-repeat;
+    background-size: cover;
+}
+
 .crystals img {
     max-width: 150px;
 }
