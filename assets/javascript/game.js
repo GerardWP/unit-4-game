@@ -5,9 +5,6 @@ $(document).ready(function () {
     var wins = $("#wins");
     var losses = $("#losses");
 
-    var currentScore = 0;
-
-    var targetValue;
 
     function getTarget() {
         return Math.floor(Math.random() * (120 - 19 + 1)) + 19;
@@ -19,9 +16,14 @@ $(document).ready(function () {
 
     newTarget();
 
+    targetScore.text(targetValue);
+
+    // playerScore.text(currentScore);
+
     var crystalValues = [];
 
     function getCrystalValues() {
+
 
         var x = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12];
 
@@ -39,31 +41,55 @@ $(document).ready(function () {
     getCrystalValues();
 
 
+
     var crystal1 = crystalValues[0],
         crystal2 = crystalValues[1],
         crystal3 = crystalValues[2],
         crystal4 = crystalValues[3];
 
 
-
-
-    $("#crystal-1").on(click, function () {
-        currentScore = currentScore + crystal1;
-    })
-
-
-    console.log(targetValue);
-
-    // console.log(crystalValues);
     console.log(crystal1);
     console.log(crystal2);
     console.log(crystal3);
     console.log(crystal4);
 
+    var currentScore = 0;
 
 
-    newTarget();
-    console.log(targetValue);
+    $('#crystal-1').on('click', function () {
+        currentScore += crystal1;
+        console.log(currentScore);
+        playerScore.text(currentScore);
+    })
+
+    $('#crystal-2').on('click', function () {
+        currentScore += crystal2;
+        console.log(currentScore);
+        playerScore.text(currentScore);
+    })
+
+    $('#crystal-3').on('click', function () {
+        currentScore += crystal3;
+        console.log(currentScore);
+        playerScore.text(currentScore);
+    })
+
+    $('#crystal-4').on('click', function () {
+        currentScore += crystal4;
+        console.log(currentScore);
+        playerScore.text(currentScore);
+    })
+
+    playerScore.text(currentScore);
+
+    // console.log(targetValue);
+
+    // console.log(crystalValues);
+
+
+
+    // newTarget();
+    // console.log(targetValue);
 
 
 
