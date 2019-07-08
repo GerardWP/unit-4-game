@@ -56,28 +56,48 @@ $(document).ready(function () {
     var currentScore = 0;
 
 
-    $('#crystal-1').on('click', function () {
-        currentScore += crystal1;
-        console.log(currentScore);
-        playerScore.text(currentScore);
-    })
+    // $('#crystal-1').on('click', function () {
+    //     currentScore += crystal1;
+    //     console.log(currentScore);
+    //     playerScore.text(currentScore);
+    // })
 
-    $('#crystal-2').on('click', function () {
-        currentScore += crystal2;
-        console.log(currentScore);
-        playerScore.text(currentScore);
-    })
+    // $('#crystal-2').on('click', function () {
+    //     currentScore += crystal2;
+    //     console.log(currentScore);
+    //     playerScore.text(currentScore);
+    // })
 
-    $('#crystal-3').on('click', function () {
-        currentScore += crystal3;
-        console.log(currentScore);
-        playerScore.text(currentScore);
-    })
+    // $('#crystal-3').on('click', function () {
+    //     currentScore += crystal3;
+    //     console.log(currentScore);
+    //     playerScore.text(currentScore);
+    // })
 
-    $('#crystal-4').on('click', function () {
-        currentScore += crystal4;
-        console.log(currentScore);
-        playerScore.text(currentScore);
+    // $('#crystal-4').on('click', function () {
+    //     currentScore += crystal4;
+    //     console.log(currentScore);
+    //     playerScore.text(currentScore);
+    // })
+
+
+
+
+    $('img').on('click', function () {
+        if ($(this).attr("id") == "crystal-1") {
+            currentScore += crystal1;
+            playerScore.text(currentScore);
+        } else if ($(this).attr("id") == "crystal-2") {
+            currentScore += crystal2;
+            playerScore.text(currentScore);
+        } else if ($(this).attr("id") == "crystal-3") {
+            currentScore += crystal3;
+            playerScore.text(currentScore);
+        } else if ($(this).attr("id") == "crystal-4") {
+            currentScore += crystal4;
+            playerScore.text(currentScore);
+        }
+
     })
 
     playerScore.text(currentScore);
