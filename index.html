@@ -17,28 +17,46 @@
     <script type="text/javascript">
         $(document).ready(function () {
 
-            var a = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12];
+            var targetValue;
 
-            var crystalVals = [];
-
-            for (i = a.length; i--;) {
-                var random = a.splice(Math.floor(Math.random() * (i + 1)), 1)[0];
-                crystalVals.push(random);
+            function getTarget() {
+                return Math.floor(Math.random() * (120 - 19 + 1)) + 19;
             }
 
-            var crystal1 = crystalVals[1],
-                crystal2 = crystalVals[2],
-                crystal3 = crystalVals[3],
-                crystal4 = crystalVals[4];
+            function newTarget() {
+                targetValue = getTarget();
+            }
+
+            newTarget();
+
+            var x = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12];
+
+            var crystalValues = [];
+
+            for (i = x.length; i--;) {
+                var random = x.splice(Math.floor(Math.random() * (i + 1)), 1)[0];
+                crystalValues.push(random);
+            }
+
+            var crystal1 = crystalValues[1],
+                crystal2 = crystalValues[2],
+                crystal3 = crystalValues[3],
+                crystal4 = crystalValues[4];
 
 
-            console.log(crystalVals);
+
+            console.log(targetValue);
+
+            console.log(crystalValues);
             console.log(crystal1);
             console.log(crystal2);
             console.log(crystal3);
             console.log(crystal4);
 
 
+
+            newTarget();
+            console.log(targetValue);
 
 
 
