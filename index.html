@@ -13,72 +13,30 @@
 
 <body>
 
-
-    <script type="text/javascript">
-        $(document).ready(function () {
-
-            var targetValue;
-
-            function getTarget() {
-                return Math.floor(Math.random() * (120 - 19 + 1)) + 19;
-            }
-
-            function newTarget() {
-                targetValue = getTarget();
-            }
-
-            newTarget();
-
-            var crystalValues = [];
-
-            function getCrystalValues() {
-
-                var x = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12];
-
-                function randomValueFromArray(arr) {
-                    var index = Math.floor(Math.random() * arr.length);
-                    return arr.splice(index, 1)[0];
-                }
-
-                for (var i = 0; i < 4; ++i) {
-                    crystalValues.push(randomValueFromArray(x));
-                }
-                return crystalValues
-            }
-
-            getCrystalValues();
+    <h1>Crystal Collector</h1>
+    <div>
+        <div class="target-box">
+            <h3 class="target-score"></h3>
+        </div>
+        <div>
+            <p>Wins: <span id="wins">0</span></p>
+            <p>Losses: <span id="losses">0</span></p>
+        </div>
+    </div>
+    <div class="crystals">
+        <a href=""><img src="./assets/images/crystal-1.gif" alt="" id="crystal-1"></a>
+        <a href=""><img src="./assets/images/crystal-2.gif" alt="" id="crystal-2"></a>
+        <a href=""><img src="./assets/images/crystal-3.gif" alt="" id="crystal-3"></a>
+        <a href=""><img src="./assets/images/crystal-4.gif" alt="" id="crystal-4"></a>
+    </div>
+    <div class="score-box">
+        <h3>Your total score is..</h3>
+        <p class="current-score">0</p>
+    </div>
 
 
-            // for (var i = 0; i < xLength; ++i) {
-            //     var random = x.splice(Math.floor(Math.random() * (xLength - i)), 1)[0];
-            //     crystalValues.push(random);
-            // }
+    <script type="text/javascript" src="assets/javascript/game.js">
 
-            var crystal1 = crystalValues[0],
-                crystal2 = crystalValues[1],
-                crystal3 = crystalValues[2],
-                crystal4 = crystalValues[3];
-
-
-
-            console.log(targetValue);
-
-            console.log(crystalValues);
-            console.log(crystal1);
-            console.log(crystal2);
-            console.log(crystal3);
-            console.log(crystal4);
-
-
-
-            newTarget();
-            console.log(targetValue);
-
-
-
-
-
-        })
     </script>
 </body>
 
