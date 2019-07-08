@@ -2,8 +2,20 @@ $(document).ready(function () {
 
     var targetScore = $("#target-score");
     var playerScore = $("#player-score");
-    var wins = $("#wins");
-    var losses = $("#losses");
+    var winText = $("#wins");
+    var lossText = $("#losses");
+
+    var wins = 0;
+    var losses = 0;
+
+    winText.text(wins);
+    lossText.text(losses);
+
+    function resetState() {
+        newTarget();
+        getCrystalValues();
+        currentScore = 0;
+    }
 
 
     function getTarget() {
@@ -84,21 +96,40 @@ $(document).ready(function () {
 
 
     $('img').on('click', function () {
-        if ($(this).attr("id") == "crystal-1") {
-            currentScore += crystal1;
-            playerScore.text(currentScore);
-        } else if ($(this).attr("id") == "crystal-2") {
-            currentScore += crystal2;
-            playerScore.text(currentScore);
-        } else if ($(this).attr("id") == "crystal-3") {
-            currentScore += crystal3;
-            playerScore.text(currentScore);
-        } else if ($(this).attr("id") == "crystal-4") {
-            currentScore += crystal4;
-            playerScore.text(currentScore);
-        }
 
+        if (currentScore !== targetScore) {
+            if ($(this).attr("id") == "crystal-1") {
+                currentScore += crystal1;
+                playerScore.text(currentScore);
+            } else if ($(this).attr("id") == "crystal-2") {
+                currentScore += crystal2;
+                playerScore.text(currentScore);
+            } else if ($(this).attr("id") == "crystal-3") {
+                currentScore += crystal3;
+                playerScore.text(currentScore);
+            } else if ($(this).attr("id") == "crystal-4") {
+                currentScore += crystal4;
+                playerScore.text(currentScore);
+            }
+        } else if (currentScore > targetScore) {
+            resetState();
+            losses++;
+        } else {
+            resetState();
+            wins++;
+        }
+        console.log(currentScore);
     })
+
+
+
+    // if (currentScore === targetScore) {
+    //     resetState();
+    //     wins++;
+    // } else if (currentScore > targetScore) {
+    //     resetState();
+    //     losses++;
+    // }
 
     playerScore.text(currentScore);
 
