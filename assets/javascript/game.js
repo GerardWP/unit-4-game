@@ -112,7 +112,7 @@ $(document).ready(function () {
         if (currentScore === targetValue) {
             wins++;
             resetState();
-            targetScore.text("You Won!");
+            targetScore.text("You Won! ☺");
             setTimeout(function () {
                 targetScore.text(targetValue);
             }, 1500);
@@ -121,7 +121,7 @@ $(document).ready(function () {
         if (currentScore > targetValue) {
             losses++;
             resetState();
-            targetScore.text("You Lost :(");
+            targetScore.text("You Lost ☹");
             setTimeout(function () {
                 targetScore.text(targetValue);
             }, 1500);
