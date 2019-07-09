@@ -1,5 +1,19 @@
 $(document).ready(function () {
 
+    var targetScore = $("#target-score");
+    var playerScore = $("#player-score");
+    var winText = $("#wins");
+    var lossText = $("#losses");
+
+    var wins = 0;
+    var losses = 0;
+    var currentScore = 0;
+
+    winText.text(wins);
+    lossText.text(losses);
+
+    // function to reset variable after win or loss
+
     function resetState() {
         crystalValues = [];
         currentScore = 0;
@@ -15,6 +29,8 @@ $(document).ready(function () {
 
     }
 
+    //  function to play sound when you click a crystal, no matter how fast you repeatedly click 
+
     function play() {
         var crystalSound = $("#sound")[0];
         if (crystalSound.paused) {
@@ -24,17 +40,7 @@ $(document).ready(function () {
         }
     }
 
-    var targetScore = $("#target-score");
-    var playerScore = $("#player-score");
-    var winText = $("#wins");
-    var lossText = $("#losses");
-
-    var wins = 0;
-    var losses = 0;
-
-    winText.text(wins);
-    lossText.text(losses);
-
+    //  function to get random integer bw 19 & 120
 
     function getTarget() {
         return Math.floor(Math.random() * (120 - 19)) + 19;
@@ -47,6 +53,9 @@ $(document).ready(function () {
     newTarget();
 
     targetScore.text(targetValue);
+
+    // randomValueFromArray splices a random number from x array, making sure no two crystals have the same value
+    //  the for loop does this 4 times. Each time the getCrystalValues function is called, the x array is reset.
 
     var crystalValues = [];
 
@@ -78,9 +87,7 @@ $(document).ready(function () {
     console.log(crystal3);
     console.log(crystal4);
 
-    var currentScore = 0;
-
-    $('img').on('click', function () {
+    $('img').click(function () {
 
         if (currentScore < targetValue) {
             if ($(this).attr("id") == "crystal-1") {
@@ -122,4 +129,4 @@ $(document).ready(function () {
 
     })
 
-})
+});
