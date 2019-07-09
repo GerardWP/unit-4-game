@@ -11,7 +11,6 @@ $(document).ready(function () {
         crystal4 = crystalValues[3];
         winText.text(wins);
         lossText.text(losses);
-        // targetScore.text(targetValue);
         playerScore.text(currentScore);
 
     }
