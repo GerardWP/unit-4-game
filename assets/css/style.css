@@ -60,17 +60,20 @@ h1 {
     border-radius: 8px;
 }
 
-.score-box,
+
 .target-box {
     margin: 10px 0 25px;
-    background: linear-gradient(to right, rgba(255, 0, 0, 0.0), rgb(34, 9, 61), rgba(255, 0, 0, 0.0))
+    background: linear-gradient(to right, rgba(255, 0, 0, 0.0), rgb(34, 9, 61), rgba(255, 0, 0, 0.0));
+    border-radius: 87px/29px;
 }
 
 .score-box {
-    /* padding: 10px; */
+    margin: 10px 0 25px;
+    border-radius: 87px/29px;
     font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
     font-weight: bold;
     text-transform: uppercase;
+    background: linear-gradient(to right, rgba(255, 0, 0, 0.0), rgb(85, 5, 81), rgba(255, 0, 0, 0.0));
 }
 
 h5 {
@@ -82,6 +85,10 @@ h5 {
     font-weight: bold;
     text-transform: uppercase;
     padding-top: 10px;
+}
+
+.score-box h5 {
+    color: #f060c2;
 }
 
 .score-box p {
