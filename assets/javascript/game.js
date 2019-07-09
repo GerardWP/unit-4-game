@@ -21,7 +21,7 @@ $(document).ready(function () {
         if (crystalSound.paused) {
             crystalSound.play();
         } else {
-            crystalSound.currentTime = 0
+            crystalSound.currentTime = 0;
         }
     }
 
