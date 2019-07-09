@@ -16,8 +16,7 @@ $(document).ready(function () {
     }
 
     function play() {
-        var crystalSound = document.getElementById('sound');
-        // var crystalSound = $("#sound");
+        var crystalSound = $("#sound")[0];
         if (crystalSound.paused) {
             crystalSound.play();
         } else {
