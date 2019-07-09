@@ -20,11 +20,19 @@ body {
 .target-box h3,
 h1 {
     margin: 0;
-    font-family: 'Bahianita', cursive;
-    font-size: 3.5em;
     text-shadow: 1px 1px 2px rgb(152, 119, 230), 0 0 25px rgb(59, 167, 230), 0 0 5px rgb(255, 0, 212);
     letter-spacing: .09em;
-    padding-bottom: 3px;
+    padding-bottom: 5px;
+}
+
+h3 {
+    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    font-size: 3em;
+}
+
+h1 {
+    font-family: 'Bahianita', cursive;
+    font-size: 3.5em;
 }
 
 .wins-box p {

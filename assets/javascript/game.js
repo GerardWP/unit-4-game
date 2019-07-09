@@ -15,6 +15,16 @@ $(document).ready(function () {
 
     }
 
+    function play() {
+        var crystalSound = document.getElementById('sound');
+        // var crystalSound = $("#sound");
+        if (crystalSound.paused) {
+            crystalSound.play();
+        } else {
+            crystalSound.currentTime = 0
+        }
+    }
+
     var targetScore = $("#target-score");
     var playerScore = $("#player-score");
     var winText = $("#wins");
@@ -30,8 +40,6 @@ $(document).ready(function () {
     function getTarget() {
         return Math.floor(Math.random() * (120 - 19)) + 19;
     }
-
-
 
     function newTarget() {
         targetValue = getTarget();
@@ -79,15 +87,19 @@ $(document).ready(function () {
             if ($(this).attr("id") == "crystal-1") {
                 currentScore += crystal1;
                 playerScore.text(currentScore);
+                play();
             } else if ($(this).attr("id") == "crystal-2") {
                 currentScore += crystal2;
                 playerScore.text(currentScore);
+                play();
             } else if ($(this).attr("id") == "crystal-3") {
                 currentScore += crystal3;
                 playerScore.text(currentScore);
+                play();
             } else if ($(this).attr("id") == "crystal-4") {
                 currentScore += crystal4;
                 playerScore.text(currentScore);
+                play();
             }
         }
 
@@ -96,7 +108,7 @@ $(document).ready(function () {
             resetState();
             targetScore.text("You Won!");
             setTimeout(function () {
-                targetScore.text(targetValue);;
+                targetScore.text(targetValue);
             }, 1500);
         }
 
@@ -105,7 +117,7 @@ $(document).ready(function () {
             resetState();
             targetScore.text("You Lost :(");
             setTimeout(function () {
-                targetScore.text(targetValue);;
+                targetScore.text(targetValue);
             }, 1500);
         }
 
