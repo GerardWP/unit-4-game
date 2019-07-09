@@ -2,16 +2,16 @@ $(document).ready(function () {
 
     function resetState() {
         crystalValues = [];
+        currentScore = 0;
         newTarget();
         getCrystalValues();
         crystal1 = crystalValues[0];
         crystal2 = crystalValues[1];
         crystal3 = crystalValues[2];
         crystal4 = crystalValues[3];
-        currentScore = 0;
         winText.text(wins);
         lossText.text(losses);
-        targetScore.text(targetValue);
+        // targetScore.text(targetValue);
         playerScore.text(currentScore);
 
     }
@@ -28,10 +28,11 @@ $(document).ready(function () {
     lossText.text(losses);
 
 
-
     function getTarget() {
-        return Math.floor(Math.random() * (120 - 19 + 1)) + 19;
+        return Math.floor(Math.random() * (120 - 19)) + 19;
     }
+
+
 
     function newTarget() {
         targetValue = getTarget();
@@ -66,8 +67,6 @@ $(document).ready(function () {
         crystal3 = crystalValues[2],
         crystal4 = crystalValues[3];
 
-
-
     console.log(crystal1);
     console.log(crystal2);
     console.log(crystal3);
@@ -77,7 +76,7 @@ $(document).ready(function () {
 
     $('img').on('click', function () {
 
-        if (currentScore !== targetValue) {
+        if (currentScore < targetValue) {
             if ($(this).attr("id") == "crystal-1") {
                 currentScore += crystal1;
                 playerScore.text(currentScore);
@@ -96,11 +95,19 @@ $(document).ready(function () {
         if (currentScore === targetValue) {
             wins++;
             resetState();
+            targetScore.text("You Won!");
+            setTimeout(function () {
+                targetScore.text(targetValue);;
+            }, 1500);
         }
 
         if (currentScore > targetValue) {
             losses++;
             resetState();
+            targetScore.text("You Lost :(");
+            setTimeout(function () {
+                targetScore.text(targetValue);;
+            }, 1500);
         }
 
     })

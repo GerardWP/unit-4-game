@@ -9,31 +9,32 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <link rel="stylesheet" href="./assets/css/reset.css">
     <link rel="stylesheet" href="./assets/css/style.css">
+    <link href="https://fonts.googleapis.com/css?family=Bahianita&display=swap" rel="stylesheet">
 </head>
 
 <body>
 
-    <h1>Crystal Collector</h1>
-    <div>
+    <section>
+        <h1 id="title">Crystal Collector</h1>
         <div class="target-box">
+            <h5>Target Score</h5>
             <h3 id="target-score">...</h3>
         </div>
-        <div>
+        <div class="crystals">
+            <img src="./assets/images/crys-1.png" id="crystal-1" class="object o1" alt="Crystal One">
+            <img src="./assets/images/crys-2.png" id="crystal-2" class="object o2" alt="Crystal Two">
+            <img src="./assets/images/crys-3.png" id="crystal-3" class="object o3" alt="Crystal Three">
+            <img src="./assets/images/crys-4.png" id="crystal-4" class="object o4" alt="Crystal Four">
+        </div>
+        <div class="score-box">
+            <h5 class="score-is">Crystal total:</h5>
+            <p id="player-score">0</p>
+        </div>
+        <div class="wins-box">
             <p>Wins: <span id="wins">...</span></p>
             <p>Losses: <span id="losses">...</span></p>
         </div>
-    </div>
-    <div class="crystals">
-        <img src="./assets/images/crystal-1.gif" id="crystal-1" alt="Crystal One">
-        <img src="./assets/images/crystal-2.gif" id="crystal-2" alt="Crystal Two">
-        <img src="./assets/images/crystal-3.gif" id="crystal-3" alt="Crystal Three">
-        <img src="./assets/images/crystal-4.gif" id="crystal-4" alt="Crystal Four">
-    </div>
-    <div class="score-box">
-        <h3>Your total score is..</h3>
-        <p id="player-score">0</p>
-    </div>
-
+    </section>
 
     <script type="text/javascript" src="assets/javascript/game.js">
 

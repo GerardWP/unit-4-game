@@ -1,8 +1,112 @@
+html {
+    box-sizing: border-box;
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: inherit;
+}
+
 body {
-    background: url(../images/crystal-cave.png) center no-repeat;
+    background: url(../images/crystal-cave.png) center top no-repeat;
     background-size: cover;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    margin: 0;
+}
+
+.target-box h3,
+h1 {
+    margin: 0;
+    font-family: 'Bahianita', cursive;
+    font-size: 3.5em;
+    text-shadow: 1px 1px 2px rgb(152, 119, 230), 0 0 25px rgb(59, 167, 230), 0 0 5px rgb(255, 0, 212);
+    letter-spacing: .09em;
+    padding-bottom: 3px;
+}
+
+.wins-box p {
+    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    text-transform: uppercase;
+    margin: 0;
+    font-weight: bold;
+    padding: 7px 17px;
+    background: rgba(34, 9, 61, 0.753);
+    border-radius: 8px;
+}
+
+.score-box,
+.target-box {
+    margin: 10px 0 25px;
+    background: linear-gradient(to right, rgba(255, 0, 0, 0.0), rgb(34, 9, 61), rgba(255, 0, 0, 0.0))
+}
+
+.score-box {
+    /* padding: 10px; */
+    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+h5 {
+    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    text-shadow: none;
+    margin: 0;
+    font-size: .8em;
+    color: rgb(195, 158, 255);
+    font-weight: bold;
+    text-transform: uppercase;
+    padding-top: 10px;
+}
+
+.score-box p {
+    text-shadow: 1px 1px 2px rgb(152, 119, 230), 0 0 25px rgb(59, 167, 230), 0 0 5px rgb(255, 0, 212);
+    font-size: 2em;
+    padding: 5px 0 10px;
+    margin: 0;
+}
+
+section {
+    width: 900px;
+    max-width: 95%;
+    margin: auto;
+    color: #fff;
+    text-align: center;
+}
+
+.object {
+    animation: action 1s infinite alternate;
+}
+
+
+@keyframes action {
+    0% {
+        transform: translateY(0);
+    }
+
+    100% {
+        transform: translateY(-11px);
+    }
+}
+
+.wins-box {
+    width: 400px;
+    margin: 10px auto;
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.crystals {
+    text-align: center;
+    display: flex;
+    justify-content: space-evenly;
+    max-width: 600px;
+    margin: 0 auto;
 }
 
 .crystals img {
-    max-width: 150px;
+    width: 60px;
+    height: 104px;
 }
