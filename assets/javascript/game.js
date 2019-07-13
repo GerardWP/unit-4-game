@@ -33,6 +33,8 @@ $(document).ready(function () {
 
     function play() {
         var crystalSound = $("#sound")[0];
+
+
         if (crystalSound.paused) {
             crystalSound.play();
         } else {
@@ -115,7 +117,7 @@ $(document).ready(function () {
             targetScore.text("You Won! ☺");
             setTimeout(function () {
                 targetScore.text(targetValue);
-            }, 1500);
+            }, 2000);
         }
 
         if (currentScore > targetValue) {
@@ -124,7 +126,7 @@ $(document).ready(function () {
             targetScore.text("You Lost ☹");
             setTimeout(function () {
                 targetScore.text(targetValue);
-            }, 1500);
+            }, 2000);
         }
 
     })
